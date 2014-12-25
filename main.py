@@ -1,8 +1,6 @@
+from Config import general_settings as config
 from time import sleep
 from graphics import Graphics
-
-SLEEP_TIME = 0.5
-MAX_LOOP_CYCLES = 10
 
 class Timer():
     def __init__(self):
@@ -13,12 +11,12 @@ class Timer():
         print '==============\n'
         g = Graphics('map_101')
         g.print_grid()
-        sleep(SLEEP_TIME)
+        sleep(config.SLEEP_TIME)
         self.time += 1
 
     def runloop(self):
         looper = 0
-        while looper < MAX_LOOP_CYCLES:
+        while looper < config.MAX_TURNS:
             self.timer()
             looper += 1
  
