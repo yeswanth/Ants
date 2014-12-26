@@ -1,6 +1,7 @@
 from Config import general_settings as config
 from time import sleep
 from graphics import Graphics
+from playerStub import Player
 
 class Timer():
     def __init__(self):
@@ -16,6 +17,7 @@ class Timer():
 
     def runloop(self):
         looper = 0
+	player1 = Player(0, 0, "player01")
         while looper < config.MAX_TURNS:
             self.timer()
             looper += 1
