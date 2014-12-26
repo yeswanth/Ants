@@ -1,7 +1,8 @@
 class Supervisor :
-    def __init__(self, startX, startY) :
+    def __init__(self, startX, startY, fileStore) :
 	self.homeX = startX
 	self.homeY = startY
+	self.fileStore = fileStore
 	self.ants = []
 
 class Ant :

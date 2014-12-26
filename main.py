@@ -17,7 +17,7 @@ class Timer():
 
     def runloop(self):
         looper = 0
-	player1 = Player(0, 0, "player01")
+	#player1 = Player(0, 0, "player01")
         while looper < config.MAX_TURNS:
             self.timer()
             looper += 1
