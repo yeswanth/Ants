@@ -6,6 +6,7 @@ from playerStub import Player
 import os
 import sys
 
+#Timer should be decoupled from loop and graphics (possibly delete class)
 class Timer():
     def __init__(self):
         self.time = 0 
@@ -13,7 +14,7 @@ class Timer():
     def timer(self):
         print "Time: ", self.time
         print '==============\n'
-        g = Graphics(config.MAP)
+        g = Graphics(config.MAP_PATH + config.MAP + '.json')
         g.print_grid()
         sleep(config.SLEEP_TIME)
         self.time += 1
@@ -28,7 +29,8 @@ class Timer():
 
 if __name__ == '__main__':      
     sys.path.append(os.getcwd())
-    game = gameMechanics.LayoutUtilities(config.MAP_PATH + config.MAP + '.json')
+    map_path = config.MAP_PATH + config.MAP + '.json'
+    game = gameMechanics.LayoutUtilities(map_path)
     print game.getRandomFreeCell()
-    timer = Timer()
-    timer.runloop()
+    #timer = Timer()
+    #timer.runloop()
